@@ -1,1 +1,29 @@
+--- Conclusion and Analysis ---
+============================================================
 
+Based on the results from the tables and plots above, we can draw several conclusions:
+
+1.  **Effect of Regularization (Lambda) on RMSD:**
+    Observe the 'RMSD on Test Set' table and plot. As lambda increases, the RMSD on the test set typically decreases initially, reaching a minimum, and then increases again for larger lambda values. This demonstrates how appropriate regularization helps prevent overfitting (reducing test error) but excessive regularization can lead to underfitting (increasing test error).
+    -   *Analyze:* Which lambda value gives the minimum RMSD on the test set for each method? How does this optimal lambda compare across methods?
+
+2.  **Comparison of Learning Methods (CF, GD, SGD):**
+    Compare the RMSD values obtained by Closed Form (CF), Gradient Descent (GD), and Stochastic Gradient Descent (SGD) for the same lambda values.
+    -   *Analyze:* Do GD and SGD achieve similar performance to CF for appropriate lambda? Are there differences in performance? Note that GD/SGD performance heavily depends on the learning rate and number of iterations. If they didn't converge fully, their RMSD might be higher than CF.
+
+3.  **Comparison of Regularization Types (Ridge vs. Lasso):**
+    Compare the RMSD values for GD-Ridge vs. GD-Lasso and SGD-Ridge vs. SGD-Lasso.
+    -   *Analyze:* Does one type of regularization consistently perform better than the other in terms of RMSD on the test set?
+
+4.  **Effect of Lasso Regularization on Weights:**
+    Examine the 'Number of Non-zero Weights' table and plot for Lasso methods. As lambda increases, the number of non-zero weights should decrease.
+    -   *Analyze:* At what lambda value do weights start becoming zero? Does a larger lambda result in a sparser model (more zero weights)? How does this relate to feature selection? Discuss any observations about which features (corresponding to which weight indices) tend to become zero first.
+
+5.  **Overall Best Performing Method and Lambda:**
+    Based on the RMSD on the test set, identify which combination of learning method and lambda value seems to provide the best generalization performance for this dataset and chosen basis functions.
+
+**Further Discussion:**
+Consider the trade-off between model complexity (degree of polynomial basis), training error (RMSD on training set), and generalization error (RMSD on test set). How does regularization help manage this trade-off?
+If you used a real-world dataset, discuss the implications of feature selection by Lasso – do the features that get zero weights make sense in the context of the problem?
+
+---
